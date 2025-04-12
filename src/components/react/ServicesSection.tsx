@@ -20,14 +20,14 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-ivory">
+    <section id="services" className="py-20 bg-gradient-to-b from-warm-neutral to-warm-neutral">
       <div className="section-container">
         <h2 className="section-title">Mis Servicios</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="bg-white border-none shadow-md hover:shadow-lg transition-shadow overflow-hidden">
-              <div className="h-2 bg-gradient-to-r from-sand to-taupe"></div>
+            <Card key={index}>
+              <div className="h-2"></div>
               <CardHeader>
                 <CardTitle className="text-xl font-serif text-slate">{service.title}</CardTitle>
                 <CardDescription className="text-slate/70">{service.description}</CardDescription>

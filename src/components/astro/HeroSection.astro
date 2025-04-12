@@ -1,0 +1,63 @@
+---
+import SectionStars from "../react/SectionStars";
+// No imports needed
+---
+
+<section
+  id="home"
+  class="min-h-screen flex items-center pt-16 bg-[#6E8B97] relative"
+>
+  <div class="section-container">
+    <div class="flex flex-col md:flex-row items-center gap-12">
+      <div class="md:w-1/2 text-center md:text-left animate-fadeIn">
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight mb-6 text-[#F8FAF9]"
+        >
+          Descubre tu camino <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#F8FAF9] to-[#D6E6E1]"
+            >interior</span
+          >
+        </h1>
+        <p class="text-lg md:text-xl text-[#F8FAF9]/90 mb-8 max-w-xl">
+          Transformación a través del coaching ontológico y las constelaciones
+          familiares para sanar tu vida y tus relaciones.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+        >
+          <a
+            href="#services"
+            class="inline-flex items-center justify-center px-8 py-3 text-sm font-serif tracking-wide transition-all duration-300 bg-gradient-to-r from-[#F8FAF9] to-[#D6E6E1] text-[#6E8B97] rounded-md hover:from-[#F8FAF9]/90 hover:to-[#D6E6E1]/90 shadow-md hover:shadow-lg"
+          >
+            Descubrir Servicios
+          </a>
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center px-8 py-3 text-sm font-serif tracking-wide transition-all duration-300 bg-transparent border-2 border-[#F8FAF9] text-[#F8FAF9] rounded-md hover:bg-[#F8FAF9]/10 shadow-sm hover:shadow-md"
+          >
+            Agendar una Sesión
+          </a>
+        </div>
+      </div>
+      <div
+        class="md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end animate-float"
+      >
+        <div
+          class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-[#F8FAF9]/20 to-[#D6E6E1]/20 flex items-center justify-center overflow-hidden shadow-lg border-2 border-[#F8FAF9]/20"
+        >
+          <div class="text-center p-8">
+            <h3
+              class="text-xl md:text-2xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-[#F8FAF9] to-[#D6E6E1]"
+            >
+              Equilibrio
+            </h3>
+            <p class="mt-2 text-sm md:text-base text-[#F8FAF9]/80">
+              Cuerpo • Mente • Espíritu
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <SectionStars client:load startX={75} startY={50} endX={50} endY={100} />
+</section>

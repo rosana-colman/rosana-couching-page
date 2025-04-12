@@ -1,0 +1,22 @@
+---
+interface Props {
+  variant?: "default" | "outline";
+  href?: string;
+  children: string;
+}
+
+const { variant = "default", href, children } = Astro.props;
+
+const baseStyles =
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 px-4 py-2";
+
+const variantStyles = {
+  default: "bg-sand text-ivory hover:bg-sand/90",
+  outline: "border border-sand bg-transparent text-sand hover:bg-sand/10",
+};
+---
+
+<a href={href} class={`${baseStyles} ${variantStyles[variant]}`}>
+  {children}
+</a>
+

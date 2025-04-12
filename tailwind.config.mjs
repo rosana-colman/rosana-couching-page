@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: ['class'],
   theme: {
 		container: {
 			center: true,
@@ -11,11 +12,16 @@ export default {
 		},
 		extend: {
 			colors: {
-				sand: "#AE9679", // Océano
-				cream: "#E4E1D6", // Brisa
-				slate: "#4C5151", // Naturaleza
-				ivory: "#F7F2E7", // Magia
-				taupe: "#9E9D8C", // Pureza
+				// Colores de marca
+				sand: '#768c9a',
+				cream: '#d3e2dd',
+				slate: '#4C5151',
+				ivory: '#F7F2E7',
+				taupe: '#9E9D8C',
+				'light-bg': '#E4E1D6',
+				'warm-neutral': '#bbafbd',
+				'soft-secondary': '#dfdae0',
+				// Colores del sistema
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -48,16 +54,6 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
 			borderRadius: {
@@ -65,22 +61,18 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			fontFamily: {
+				sans: ['Montserrat', 'sans-serif'],
+				serif: ['Playfair Display', 'serif']
+			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: 0 },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: 0 }
 				},
 				fadeIn: {
 					'0%': { opacity: '0' },
@@ -96,12 +88,6 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fadeIn': 'fadeIn 1s ease-in-out',
 				'float': 'float 4s ease-in-out infinite'
-			},
-			fontFamily: {
-				serif: ['Playfair Display', 'serif'],
-				sans: ['Montserrat', 'sans-serif'],
-				belleza: ['Belleza', 'sans-serif'],
-				cormorant: ['Cormorant', 'serif'], 
 			}
 		}
 	},
