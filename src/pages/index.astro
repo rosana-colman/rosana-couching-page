@@ -1,25 +1,83 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import AboutSection from "../components/react/AboutSection.tsx";
-import ContactSection from "../components/react/ContactSection.tsx";
-import Footer from "../components/react/Footer.tsx";
-import HeroSection from "../components/react/HeroSection.tsx";
+import HeroSection from "../components/astro/HeroSection.astro";
+import AboutSection from "../components/astro/AboutSection.astro";
+import ServicesSection from "../components/astro/ServicesSection.astro";
+import ProcessSection from "../components/astro/ProcessSection.astro";
+import ContactSection from "../components/astro/ContactSection.astro";
 import NavBar from "../components/react/NavBar.tsx";
-import ProcessSection from "../components/react/ProcessSection.tsx";
-import ServicesSection from "../components/react/ServicesSection.tsx";
-import TestimonialsSection from "../components/react/TestimonialsSection.tsx";
+import Hummingbird from "../components/react/Hummingbird";
+import StarTrail from "../components/react/StarTrail";
 ---
 
-<Layout title="Ro Colman - Coaching Holístico">
-  <main>
+<Layout title="Rosana Coaching | Transformación Personal">
+  <div class="flex flex-col min-h-screen">
     <NavBar />
-    <HeroSection />
-    <AboutSection />
-    <ServicesSection />
-    <ProcessSection />
-    <TestimonialsSection />
-    <ContactSection />
-  </main>
-  <Footer />
+    <main
+      class="flex-grow bg-ivory snap-y snap-mandatory h-screen overflow-y-auto"
+    >
+      <div class="snap-start h-screen relative">
+        <div class="fixed top-0 left-0 w-full h-full pointer-events-none">
+          <StarTrail client:load />
+          <Hummingbird client:load />
+        </div>
+        <HeroSection />
+      </div>
+      <div class="snap-start h-screen">
+        <AboutSection />
+      </div>
+      <div class="snap-start h-screen">
+        <ServicesSection />
+      </div>
+      <div class="snap-start h-screen">
+        <ProcessSection />
+      </div>
+      <div class="snap-start h-screen">
+        <ContactSection />
+      </div>
+    </main>
+  </div>
 </Layout>
+
+<style>
+  :global(body) {
+    @apply bg-ivory text-slate;
+  }
+
+  :global(.section-container) {
+    @apply max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8;
+  }
+
+  :global(.section-title) {
+    @apply text-3xl md:text-4xl font-serif text-slate mb-8 text-center font-medium;
+  }
+
+  :global(.gradient-text) {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-sand to-slate;
+  }
+
+  :global(.card) {
+    @apply bg-ivory rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl;
+  }
+
+  :global(.btn-primary) {
+    @apply bg-sand hover:bg-sand/80 text-ivory px-6 py-3 rounded-md transition-colors duration-300;
+  }
+
+  :global(.btn-secondary) {
+    @apply bg-soft-secondary hover:bg-warm-neutral text-slate px-6 py-3 rounded-md transition-colors duration-300;
+  }
+
+  :global(.text-gradient) {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-sand to-taupe;
+  }
+
+  :global(.bg-gradient-section) {
+    @apply bg-gradient-to-b from-ivory to-cream;
+  }
+
+  :global(.border-accent) {
+    @apply border-2 border-sand/20;
+  }
+</style>

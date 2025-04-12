@@ -7,7 +7,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
               <a href="#home" className="text-xl font-serif font-medium text-ivory">
-                Aura<span className="text-sand">Constelaciones</span>
+                <img src="/logo-alternativo.png" width={300} height={300}/>
               </a>
               <p className="mt-2 text-sm text-ivory/70">
                 Coaching ontológico y constelaciones familiares
@@ -61,7 +61,7 @@ const Footer = () => {
           
           <div className="border-t border-ivory/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-ivory/60">
-              &copy; {currentYear} AuraConstelaciones. Todos los derechos reservados.
+              &copy; {currentYear} Rosana Colman. Todos los derechos reservados.
             </p>
             
             <div className="mt-4 md:mt-0 flex space-x-4">
