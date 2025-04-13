@@ -89,111 +89,225 @@ const services = [
 ---
 
 <section id="services" class="snap-section bg-[#D6E6E1] relative">
-  <div class="container mx-auto px-4 py-20">
-    <h2 class="text-4xl font-belleza text-[#4A4558] text-left mb-12">
+  <div class="container mx-auto px-4 py-6 sm:py-10 md:py-20">
+    <h2
+      class="text-xl sm:text-2xl md:text-4xl font-belleza text-[#4A4558] text-left mb-4 sm:mb-6 md:mb-12"
+    >
       Servicios
     </h2>
 
     <div id="services-container" class="flex flex-col items-center">
-      {/* Cards iniciales */}
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500 w-full max-w-6xl mx-auto"
-        id="services-cards"
-      >
-        {
-          services.map((service) => (
-            <Card
-              class="bg-[#F8F8F5] border-[#4A4558]/10 hover:border-[#4A4558]/20 transition-all duration-300 compact-card"
-              data-service={service.id}
-            >
-              <CardHeader class="text-center">
-                <CardTitle class="text-[#4A4558] text-xl font-medium">
-                  {service.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p class="text-[#4A4558]/80 mb-6 service-description text-center">
-                  {service.description}
-                </p>
-                <ul class="space-y-3 mb-6 service-features">
-                  {service.features.map((feature) => (
-                    <li class="flex items-start">
-                      <svg
-                        class="w-5 h-5 text-[#4A4558] mt-0.5 mr-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span class="text-[#4A4558]/80">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  class="w-full bg-[#4A4558] text-[#F8F8F5] hover:bg-[#4A4558]/90 border-[#4A4558] rounded-md px-4 py-2 more-info-btn"
-                  data-service={service.id}
-                >
-                  Más información
-                </button>
-              </CardContent>
-            </Card>
-          ))
-        }
-      </div>
-
-      {/* Sección detallada (inicialmente oculta) */}
-      <div
-        class="hidden mt-12 grid-cols-1 lg:grid-cols-2 gap-8"
-        id="detailed-section"
-      >
-        {/* Cuadrante izquierdo - Ahora el gráfico */}
-        <div class="bg-transparent p-6" id="left-quadrant">
+      <!-- Versión escritorio (visible en md+) -->
+      <div class="hidden md:block w-full">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500 w-full max-w-6xl mx-auto"
+          id="services-cards"
+        >
           {
             services.map((service) => (
-              <div id={`right-${service.id}`} class="service-content hidden">
-                {service.showProcess ? (
-                  <ProcessSection />
-                ) : (
-                  <div set:html={service.leftContent} />
-                )}
-              </div>
+              <Card
+                class="bg-[#F8F8F5] border-[#4A4558]/10 hover:border-[#4A4558]/20 transition-all duration-300 compact-card"
+                data-service={service.id}
+              >
+                <CardHeader class="text-center py-6">
+                  <CardTitle class="text-[#4A4558] text-xl font-medium">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent class="px-6">
+                  <p class="text-[#4A4558]/80 mb-6 service-description text-center">
+                    {service.description}
+                  </p>
+                  <ul class="space-y-3 mb-6 service-features">
+                    {service.features.map((feature) => (
+                      <li class="flex items-start">
+                        <svg
+                          class="w-5 h-5 text-[#4A4558] mt-0.5 mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        <span class="text-[#4A4558]/80">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    class="w-full bg-[#4A4558] text-[#F8F8F5] hover:bg-[#4A4558]/90 border-[#4A4558] rounded-md px-4 py-2 more-info-btn"
+                    data-service={service.id}
+                  >
+                    Más información
+                  </button>
+                </CardContent>
+              </Card>
             ))
           }
         </div>
 
-        {/* Cuadrante derecho - Ahora el logo */}
+        {/* Sección detallada (para desktop, inicialmente oculta) */}
         <div
-          class="bg-transparent h-[60%] p-6 flex items-center justify-center"
-          id="right-quadrant"
+          class="hidden mt-12 grid-cols-1 lg:grid-cols-2 gap-8"
+          id="detailed-section"
         >
+          {/* Cuadrante izquierdo - Ahora el gráfico */}
+          <div class="bg-transparent p-6" id="left-quadrant">
+            {
+              services.map((service) => (
+                <div id={`right-${service.id}`} class="service-content hidden">
+                  {service.showProcess ? (
+                    <ProcessSection />
+                  ) : (
+                    <div set:html={service.leftContent} />
+                  )}
+                </div>
+              ))
+            }
+          </div>
+
+          {/* Cuadrante derecho - Ahora el logo */}
+          <div
+            class="bg-transparent p-6 flex items-center justify-center"
+            id="right-quadrant"
+          >
+            {
+              services.map((service) => (
+                <div
+                  id={`left-${service.id}`}
+                  class="service-content hidden"
+                  set:html={
+                    service.id === "coaching" ? "" : service.rightContent
+                  }
+                />
+              ))
+            }
+            <div
+              id="brand-logo"
+              class="hidden w-full flex justify-center items-center"
+            >
+              <div class="logo-container animate-float">
+                <div class="logo-circle circle-1"></div>
+                <div class="logo-circle circle-2"></div>
+                <div class="logo-circle circle-3"></div>
+                <span class="circle-label label-1">Cuerpo</span>
+                <span class="circle-label label-2">Mente</span>
+                <span class="circle-label label-3">Emoción</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Versión móvil (Sistema de acordeón, solo visible en <md) -->
+      <div class="md:hidden w-full">
+        <div class="space-y-3 w-full" id="mobile-accordion">
           {
             services.map((service) => (
               <div
-                id={`left-${service.id}`}
-                class="service-content hidden"
-                set:html={service.id === "coaching" ? "" : service.rightContent}
-              />
+                class="mobile-service-card bg-[#F8F8F5] rounded-lg shadow-sm overflow-hidden border border-[#4A4558]/10"
+                data-service={service.id}
+              >
+                {/* Cabecera del acordeón (siempre visible) */}
+                <div class="accordion-header px-4 py-3 flex justify-between items-center cursor-pointer">
+                  <h3 class="text-[#4A4558] font-medium text-base">
+                    {service.title}
+                  </h3>
+                  <svg
+                    class="accordion-icon w-5 h-5 text-[#4A4558] transform transition-transform duration-300"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </div>
+
+                {/* Contenido del acordeón (inicialmente oculto) */}
+                <div class="accordion-content px-4 pb-4 hidden">
+                  {/* Descripción básica */}
+                  <p class="text-[#4A4558]/80 text-sm mb-3">
+                    {service.description}
+                  </p>
+
+                  {/* Características */}
+                  <div class="mb-4">
+                    <h4 class="text-[#4A4558] font-medium text-sm mb-2">
+                      Características:
+                    </h4>
+                    <ul class="space-y-1">
+                      {service.features.map((feature) => (
+                        <li class="flex items-start">
+                          <svg
+                            class="w-4 h-4 text-[#4A4558] mt-0.5 mr-1 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                          <span class="text-[#4A4558]/80 text-xs">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Contenido detallado */}
+                  <div class="service-detail-container">
+                    {service.showProcess ? (
+                      <div class="process-container">
+                        <h4 class="text-[#4A4558] font-medium text-sm mb-2 text-center">
+                          Proceso
+                        </h4>
+                        <ProcessSection />
+                      </div>
+                    ) : (
+                      <div class="grid grid-cols-1 gap-4">
+                        <div
+                          class="left-content text-xs"
+                          set:html={service.leftContent}
+                        />
+                        <div
+                          class="right-content text-xs"
+                          set:html={service.rightContent}
+                        />
+                      </div>
+                    )}
+
+                    {/* Logo para Coaching */}
+                    {service.id === "coaching" && (
+                      <div class="flex justify-center mt-4">
+                        <div class="logo-container-mobile">
+                          <div class="logo-circle circle-1" />
+                          <div class="logo-circle circle-2" />
+                          <div class="logo-circle circle-3" />
+                          <span class="circle-label label-1">Cuerpo</span>
+                          <span class="circle-label label-2">Mente</span>
+                          <span class="circle-label label-3">Emoción</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
             ))
           }
-          <div
-            id="brand-logo"
-            class="hidden w-full flex justify-center items-center"
-          >
-            <div class="logo-container animate-float">
-              <div class="logo-circle circle-1"></div>
-              <div class="logo-circle circle-2"></div>
-              <div class="logo-circle circle-3"></div>
-              <span class="circle-label label-1">Cuerpo</span>
-              <span class="circle-label label-2">Mente</span>
-              <span class="circle-label label-3">Emoción</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -204,16 +318,33 @@ const services = [
 <style>
   .service-content h3 {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
   }
+
+  @media (min-width: 640px) {
+    .service-content h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+  }
+
   .service-content ul {
     max-width: 400px;
     margin: 0 auto;
   }
+
   .service-content p {
     max-width: 500px;
     margin: 0 auto;
     text-align: center;
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 640px) {
+    .service-content p {
+      font-size: 1rem;
+    }
   }
 
   /* Estilos para las cards compactadas */
@@ -222,25 +353,31 @@ const services = [
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem;
-    min-height: auto;
-    max-height: 60px;
   }
 
-  .compact-card .card-header {
-    margin: 0;
-    padding: 0;
-  }
+  /* Solo aplicar estilos compactados en desktop */
+  @media (min-width: 768px) {
+    .compact-card.is-compact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem;
+      min-height: auto;
+      max-height: 60px;
+    }
 
-  .compact-card .more-info-btn {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-    margin: 0;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+    .compact-card.is-compact .card-header {
+      margin: 0;
+      padding: 0;
+    }
+
+    .compact-card.is-compact .more-info-btn {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.875rem;
+      margin: 0;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
   }
 
   .compact-card .more-info-btn:hover {
@@ -279,36 +416,66 @@ const services = [
     color: #f8f8f5;
   }
 
-  .logo-container {
+  /* Estilos para el logo */
+  .logo-container,
+  .logo-container-mobile {
     position: relative;
-    width: 300px;
-    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .logo-circle {
-    position: absolute;
+  .logo-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .logo-container-mobile {
     width: 180px;
     height: 180px;
+  }
+
+  .logo-circle {
+    position: absolute;
     border: 2px solid #4a4558;
     border-radius: 50%;
   }
 
-  .circle-1 {
+  .logo-container .logo-circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .logo-container-mobile .logo-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .logo-container .circle-1 {
     transform: translateX(-70px);
   }
 
-  .circle-2 {
+  .logo-container .circle-2 {
     transform: translateX(70px);
   }
 
-  .circle-3 {
+  .logo-container .circle-3 {
     transform: translateY(90px);
   }
 
-  .circle-label {
+  .logo-container-mobile .circle-1 {
+    transform: translateX(-40px);
+  }
+
+  .logo-container-mobile .circle-2 {
+    transform: translateX(40px);
+  }
+
+  .logo-container-mobile .circle-3 {
+    transform: translateY(50px);
+  }
+
+  .logo-container .circle-label {
     position: absolute;
     font-size: 1rem;
     font-weight: 500;
@@ -317,20 +484,47 @@ const services = [
     letter-spacing: 0.05em;
   }
 
-  .label-1 {
+  .logo-container-mobile .circle-label {
+    position: absolute;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #4a4558;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .logo-container .label-1 {
     top: 40px;
     left: 30px;
     transform: translateY(100px) translateX(10px);
   }
 
-  .label-2 {
+  .logo-container .label-2 {
     top: 40px;
     right: 30px;
     transform: translateY(100px) translateX(-20px);
   }
 
-  .label-3 {
+  .logo-container .label-3 {
     bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .logo-container-mobile .label-1 {
+    top: 25px;
+    left: 20px;
+    transform: translateY(60px) translateX(5px);
+  }
+
+  .logo-container-mobile .label-2 {
+    top: 25px;
+    right: 20px;
+    transform: translateY(60px) translateX(-10px);
+  }
+
+  .logo-container-mobile .label-3 {
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -347,30 +541,247 @@ const services = [
   .logo-container:hover .logo-circle {
     animation-play-state: paused;
   }
+
+  /* Estilos específicos para el acordeón móvil */
+  .mobile-service-card {
+    transition: all 0.3s ease;
+  }
+
+  .mobile-service-card.active {
+    box-shadow: 0 4px 6px -1px rgba(74, 69, 88, 0.1);
+  }
+
+  .mobile-service-card.active .accordion-icon {
+    transform: rotate(180deg);
+  }
+
+  /* Estilos para el contenido del acordeón en móvil */
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.3s ease,
+      padding 0.3s ease;
+  }
+
+  .accordion-content.open {
+    max-height: none;
+    overflow: visible;
+  }
+
+  /* Sobrescribir estilos del contenido para móvil */
+  .service-detail-container {
+    margin-top: 1rem;
+  }
+
+  .left-content h3,
+  .right-content h3 {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+    text-align: center !important;
+  }
+
+  .left-content ul,
+  .right-content ul {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .left-content li,
+  .right-content li {
+    font-size: 0.75rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .left-content p,
+  .right-content p {
+    font-size: 0.75rem !important;
+    max-width: 100% !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+  }
+
+  /* Ajustes para ProcessSection dentro del acordeón */
+  .process-container h3,
+  .process-container h4 {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.5rem !important;
+    text-align: center !important;
+  }
+
+  .process-container p {
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Ajustes para que las tarjetas se vean completas */
+  .mobile-service-card {
+    margin-bottom: 0.75rem;
+  }
+
+  .mobile-service-card:last-child {
+    margin-bottom: 0;
+  }
 </style>
 
 <script>
-  function initializeServices() {
+  // Tipos para los servicios
+  interface Service {
+    id: string;
+    title: string;
+    description: string;
+    features: string[];
+    leftContent?: string;
+    rightContent?: string;
+    showProcess?: boolean;
+  }
+
+  function initializeServices(): void {
+    // Verificar si estamos en móvil o desktop
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+      initializeMobileAccordion();
+    } else {
+      initializeDesktopCards();
+    }
+
+    // Si cambia el tamaño de la ventana, recargar la página
+    window.addEventListener("resize", function () {
+      const newIsMobile = window.innerWidth < 768;
+      if (newIsMobile !== isMobile) {
+        location.reload();
+      }
+    });
+  }
+
+  function initializeMobileAccordion(): void {
+    const accordionHeaders =
+      document.querySelectorAll<HTMLElement>(".accordion-header");
+    const accordionContents =
+      document.querySelectorAll<HTMLElement>(".accordion-content");
+    const mobileServiceCards = document.querySelectorAll<HTMLElement>(
+      ".mobile-service-card"
+    );
+
+    accordionHeaders.forEach((header, index) => {
+      header.addEventListener("click", () => {
+        // Obtener el contenido correspondiente a este encabezado
+        const content = accordionContents[index];
+        const card = mobileServiceCards[index];
+
+        // Comprobar si está abierto
+        const isOpen = !content.classList.contains("hidden");
+
+        // Cerrar todos los acordeones
+        accordionContents.forEach((cont) => {
+          cont.classList.add("hidden");
+        });
+
+        mobileServiceCards.forEach((card) => {
+          card.classList.remove("active");
+        });
+
+        // Si no estaba abierto, abrir este
+        if (!isOpen) {
+          content.classList.remove("hidden");
+          card.classList.add("active");
+
+          // Arreglar los estilos del contenido
+          const leftContentElements = content.querySelectorAll(
+            ".left-content h3, .right-content h3"
+          );
+          leftContentElements.forEach((el) => {
+            (el as HTMLElement).style.fontSize = "1rem";
+            (el as HTMLElement).style.marginBottom = "0.5rem";
+            (el as HTMLElement).style.textAlign = "center";
+          });
+
+          const listElements = content.querySelectorAll(
+            ".left-content ul, .right-content ul"
+          );
+          listElements.forEach((el) => {
+            (el as HTMLElement).style.maxWidth = "100%";
+            (el as HTMLElement).style.marginLeft = "0";
+            (el as HTMLElement).style.marginRight = "0";
+          });
+
+          const listItemElements = content.querySelectorAll(
+            ".left-content li, .right-content li"
+          );
+          listItemElements.forEach((el) => {
+            (el as HTMLElement).style.fontSize = "0.75rem";
+            (el as HTMLElement).style.marginBottom = "0.5rem";
+          });
+
+          const paragraphElements = content.querySelectorAll(
+            ".left-content p, .right-content p"
+          );
+          paragraphElements.forEach((el) => {
+            (el as HTMLElement).style.fontSize = "0.75rem";
+            (el as HTMLElement).style.maxWidth = "100%";
+            (el as HTMLElement).style.lineHeight = "1.4";
+            (el as HTMLElement).style.textAlign = "center";
+          });
+
+          // También arreglar los estilos para ProcessSection
+          const processContainer = content.querySelector(".process-container");
+          if (processContainer) {
+            // Ajustar estilos del componente ProcessSection si está presente
+            const processElements =
+              processContainer.querySelectorAll("h3, h4, p");
+            processElements.forEach((el) => {
+              (el as HTMLElement).style.fontSize = "0.75rem";
+              (el as HTMLElement).style.lineHeight = "1.4";
+            });
+
+            const processTitles = processContainer.querySelectorAll("h3, h4");
+            processTitles.forEach((el) => {
+              (el as HTMLElement).style.fontSize = "0.9rem";
+              (el as HTMLElement).style.marginBottom = "0.5rem";
+            });
+          }
+
+          // Asegurar que el elemento sea visible aplicando un height y removiendo overflow hidden
+          setTimeout(() => {
+            content.style.maxHeight = "none";
+            content.style.overflow = "visible";
+          }, 10);
+        }
+      });
+    });
+  }
+
+  function initializeDesktopCards(): void {
     const cardsContainer = document.getElementById("services-cards");
     const detailedSection = document.getElementById("detailed-section");
-    const moreInfoButtons = document.querySelectorAll(".more-info-btn");
-    const descriptions = document.querySelectorAll(".service-description");
-    const features = document.querySelectorAll(".service-features");
+    const moreInfoButtons =
+      document.querySelectorAll<HTMLButtonElement>(".more-info-btn");
+    const descriptions = document.querySelectorAll<HTMLElement>(
+      ".service-description"
+    );
+    const features =
+      document.querySelectorAll<HTMLElement>(".service-features");
     const brandLogo = document.getElementById("brand-logo");
+    const cards = document.querySelectorAll<HTMLElement>(".card");
 
     if (!cardsContainer || !detailedSection || !brandLogo) return;
 
     let isExpanded = false;
     let currentService = "";
 
-    function showDetailedInfo(serviceId) {
+    function showDetailedInfo(serviceId: string): void {
       // Ocultar todos los contenidos
-      document.querySelectorAll(".service-content").forEach((content) => {
-        content.classList.add("hidden");
-      });
+      document
+        .querySelectorAll<HTMLElement>(".service-content")
+        .forEach((content) => {
+          content.classList.add("hidden");
+        });
 
       // Actualizar estado de las cards
-      document.querySelectorAll(".compact-card").forEach((card) => {
+      cards.forEach((card) => {
         card.classList.remove("active");
         if (card.getAttribute("data-service") === serviceId) {
           card.classList.add("active");
@@ -407,28 +818,29 @@ const services = [
       currentService = serviceId;
     }
 
-    function expandCards() {
+    function expandCards(): void {
       if (!isExpanded) {
         // Compactar cards
         descriptions.forEach((desc) => desc.classList.add("hidden"));
         features.forEach((feat) => feat.classList.add("hidden"));
 
         // Aplicar estilos compactados
-        const cards = document.querySelectorAll(".card");
         cards.forEach((card) => {
-          card.classList.add("compact-card");
+          card.classList.add("is-compact");
         });
 
-        // Mostrar sección detallada
-        detailedSection.classList.remove("hidden");
-        detailedSection.classList.add("grid");
+        // Mostrar sección detallada para desktop
+        if (detailedSection) {
+          detailedSection.classList.remove("hidden");
+          detailedSection.classList.add("grid");
+        }
 
         isExpanded = true;
       }
     }
 
     // Manejar clic en "Más información" y en las cards compactadas
-    function handleCardClick(serviceId) {
+    function handleCardClick(serviceId: string): void {
       if (!isExpanded) {
         expandCards();
       }
@@ -436,7 +848,9 @@ const services = [
     }
 
     moreInfoButtons.forEach((button) => {
-      button.addEventListener("click", () => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         const serviceId = button.getAttribute("data-service");
         if (serviceId) {
           handleCardClick(serviceId);
@@ -445,7 +859,7 @@ const services = [
     });
 
     // Agregar evento de clic a las cards compactadas
-    document.querySelectorAll(".card").forEach((card) => {
+    cards.forEach((card) => {
       card.addEventListener("click", () => {
         if (isExpanded) {
           const serviceId = card.getAttribute("data-service");

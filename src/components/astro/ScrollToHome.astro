@@ -1,10 +1,10 @@
 <a
   href="#home"
-  class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-[#F8F8F5] text-[#6E8B97] p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 opacity-0 invisible group-[.scrolled]:opacity-100 group-[.scrolled]:visible"
+  class="fixed bottom-6 right-6 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 z-50 bg-[#F8F8F5] text-[#6E8B97] p-3 sm:p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 opacity-0 invisible group-[.scrolled]:opacity-100 group-[.scrolled]:visible"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="h-6 w-6"
+    class="h-5 w-5 sm:h-6 sm:w-6"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -34,7 +34,8 @@
       aboutSection,
       servicesSection,
       contactSection,
-    ];
+    ] as HTMLElement[]; // Type assertion to fix error
+
     let isScrolled = false;
 
     const observer = new IntersectionObserver(
@@ -45,7 +46,8 @@
               body.classList.remove("scrolled");
               isScrolled = false;
             }
-          } else if (sections.includes(entry.target)) {
+          } else if (sections.includes(entry.target as HTMLElement)) {
+            // Type assertion to fix error
             if (entry.isIntersecting) {
               isScrolled = true;
               body.classList.add("scrolled");
