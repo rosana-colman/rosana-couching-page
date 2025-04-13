@@ -30,19 +30,21 @@ const testimonials = [
 ];
 ---
 
-<section id="contact" class="snap-section bg-[#E4DEE4] relative">
-  <div class="section-container h-full">
+<section id="contact" class="snap-section bg-[#6E8B97] relative">
+  <div class="container mx-auto px-4 py-20 relative z-10">
+    <h2 class="text-4xl font-belleza text-[#F8F8F5] text-left mb-12">
+      Testimonios y Contacto
+    </h2>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 h-full">
       {/* Testimonials Section */}
       <div class="lg:sticky lg:top-8">
-        <h2 class="section-title text-[#4A4558] mb-8">Testimonios</h2>
         <div class="space-y-6">
           {
             testimonials.map((testimonial) => (
-              <Card class="bg-[#F8F8F5] border-[#4A4558]/10">
+              <Card class="bg-[#F8F8F5] border-[#F8F8F5]/20">
                 <CardContent class="p-6">
-                  <div class="mb-4 text-[#4A4558] text-4xl font-serif">"</div>
-                  <p class="text-[#4A4558]/80 italic mb-6">
+                  <div class="mb-4 text-[#F8F8F5] text-4xl font-serif">"</div>
+                  <p class="text-[#F8F8F5]/90 italic mb-6">
                     {testimonial.quote}
                   </p>
                   <div class="flex items-center">
@@ -50,10 +52,10 @@ const testimonials = [
                       {testimonial.initial}
                     </div>
                     <div class="ml-3">
-                      <div class="font-medium text-[#4A4558]">
+                      <div class="font-medium text-[#F8F8F5]">
                         {testimonial.author}
                       </div>
-                      <div class="text-xs text-[#4A4558]/70">
+                      <div class="text-xs text-[#F8F8F5]/70">
                         {testimonial.role}
                       </div>
                     </div>
@@ -67,11 +69,10 @@ const testimonials = [
 
       {/* Contact Section */}
       <div
-        class="flex flex-col justify-center lg:pl-8 lg:border-l border-[#4A4558]/10"
+        class="flex flex-col justify-center lg:pl-8 lg:border-l border-[#F8F8F5]/20"
       >
-        <h2 class="section-title text-[#4A4558] mb-8">Contacto</h2>
         <div class="max-w-lg mx-auto text-center">
-          <p class="text-lg text-[#4A4558]/90 mb-8">
+          <p class="text-lg text-[#F8F8F5]/90 mb-8">
             ¿Listo para iniciar tu proceso de transformación? Estoy aquí para
             acompañarte en tu camino hacia el bienestar y el crecimiento
             personal.
@@ -79,10 +80,10 @@ const testimonials = [
 
           <div class="flex flex-col items-center gap-4">
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/1155053393"
               target="_blank"
               rel="noopener noreferrer"
-              class="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-md text-sm font-medium bg-[#4A4558] hover:bg-[#4A4558]/90 text-[#F8F8F5] px-8 py-4 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              class="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-md text-sm font-medium bg-[#F8F8F5] hover:bg-[#F8F8F5]/90 text-[#6E8B97] px-8 py-4 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -92,7 +93,7 @@ const testimonials = [
               <span class="text-lg">Contactar por WhatsApp</span>
             </a>
 
-            <p class="text-sm text-[#4A4558]/60">
+            <p class="text-sm text-[#F8F8F5]/60">
               Horario de atención: Lunes a Viernes, 9:00 - 18:00
             </p>
           </div>
@@ -100,7 +101,22 @@ const testimonials = [
       </div>
     </div>
   </div>
-  <div class="absolute inset-0 z-0">
+  <div class="absolute inset-0 z-0 pointer-events-none">
     <SectionStars client:load startX={25} startY={0} endX={75} endY={50} />
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const whatsappButton = document.getElementById("whatsappButton");
+    if (!whatsappButton) return;
+
+    whatsappButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  });
+</script>

@@ -1,0 +1,61 @@
+<a
+  href="#home"
+  class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-[#F8F8F5] text-[#6E8B97] p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 opacity-0 invisible group-[.scrolled]:opacity-100 group-[.scrolled]:visible"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+    ></path>
+  </svg>
+</a>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const homeSection = document.getElementById("home");
+    const aboutSection = document.getElementById("about");
+    const servicesSection = document.getElementById("services");
+    const contactSection = document.getElementById("contact");
+    const body = document.body;
+
+    if (!homeSection || !aboutSection || !servicesSection || !contactSection)
+      return;
+
+    const sections = [
+      homeSection,
+      aboutSection,
+      servicesSection,
+      contactSection,
+    ];
+    let isScrolled = false;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === homeSection) {
+            if (entry.isIntersecting) {
+              body.classList.remove("scrolled");
+              isScrolled = false;
+            }
+          } else if (sections.includes(entry.target)) {
+            if (entry.isIntersecting) {
+              isScrolled = true;
+              body.classList.add("scrolled");
+            }
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  });
+</script>

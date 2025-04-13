@@ -25,17 +25,12 @@ const Navbar = () => {
     { name: "INICIO", href: "#home" },
     { name: "SOBRE MÍ", href: "#about" },
     { name: "SERVICIOS", href: "#services" },
-    { name: "PROCESOS", href: "#process" },
     { name: "CONTACTO", href: "#contact" }
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-[#6E8B97]/90 backdrop-blur-md shadow-lg' 
-          : 'bg-transparent'
-      }`}
+      className={`absolute top-0 left-0 right-0 w-full z-50 transition-all duration-500 bg-[#BBAEBE]`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -44,7 +39,7 @@ const Navbar = () => {
             href="#home" 
             className="text-xl font-serif font-medium tracking-wide text-[#F8FAF9] mt-6"
           >
-            <img src="/logo-primario.png" alt="Logo Primario" className="w-40 h-40" />
+            <img src="/logo-primario-blanco.png" alt="Logo Primario" className="w-40 h-20" />
           </a>
 
           {/* Desktop Navigation */}
@@ -67,7 +62,7 @@ const Navbar = () => {
             <Button 
               asChild 
               variant="outline" 
-              className={`border-sand text-sand hover:bg-sand hover:text-ivory transition-all duration-300 ${
+              className={`border-[#BBAEBE] text-[#BBAEBE] hover:bg-[#BBAEBE] hover:text-ivory transition-all duration-300 ${
                 isScrolled ? 'bg-transparent' : ''
               }`}
             >
@@ -88,7 +83,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-[#6E8B97]/95 backdrop-blur-md h-screen">
+          <div className="md:hidden bg-[#BBAEBE]/95 backdrop-blur-md h-screen">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navLinks.map((link) => (
                 <a
@@ -102,7 +97,7 @@ const Navbar = () => {
               ))}
               <Button 
                 asChild 
-                className="font-sans w-full mt-4 bg-sand hover:bg-sand/80 text-ivory transition-all duration-300"
+                className="font-sans w-full mt-4 bg-sand hover:bg-[#BBAEBE] text-ivory transition-all duration-300"
               >
                 <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contactar</a>
               </Button>
