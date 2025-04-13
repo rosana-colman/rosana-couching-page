@@ -1,7 +1,91 @@
 ---
 import { Card, CardContent, CardHeader, CardTitle } from "../react/ui/card";
-import { Button } from "../react/ui/button";
 import SectionStars from "../react/SectionStars";
+import ProcessSection from "./ProcessSection.astro";
+
+const services = [
+  {
+    id: "constelaciones",
+    title: "Constelaciones Familiares",
+    description:
+      "Una metodología que te permite identificar y transformar patrones familiares inconscientes que afectan tu vida actual, generando nuevas posibilidades de bienestar.",
+    features: [
+      "Sesiones individuales y grupales",
+      "Identificación de dinámicas familiares",
+      "Resolución de conflictos intergeneracionales",
+    ],
+    leftContent: `
+      <h3 class="text-2xl font-medium text-[#4A4558] mb-4">Beneficios</h3>
+      <ul class="space-y-3">
+        <li class="flex items-start">
+          <span class="text-[#4A4558]/80">• Resolución de conflictos familiares</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#4A4558]/80">• Sanación de relaciones</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#4A4558]/80">• Liberación de patrones limitantes</span>
+        </li>
+      </ul>
+    `,
+    rightContent: `
+      <h3 class="text-2xl font-medium text-[#4A4558] mb-4">Metodología</h3>
+      <p class="text-[#4A4558]/80">
+        A través de la representación espacial y la observación sistémica, 
+        trabajamos en la identificación y transformación de dinámicas familiares 
+        que afectan tu presente. El proceso permite visualizar y resolver 
+        conflictos ocultos, liberando el potencial para crear nuevas posibilidades 
+        de bienestar.
+      </p>
+    `,
+  },
+  {
+    id: "coaching",
+    title: "Coach Ontológico y Sistemico",
+    description:
+      "Un proceso transformador que te ayuda a desarrollar nuevas formas de observar, interpretar y actuar en tu vida, permitiéndote alcanzar resultados extraordinarios.",
+    features: [
+      "Sesiones individuales personalizadas",
+      "Desarrollo de competencias conversacionales",
+      "Herramientas prácticas para el día a día",
+    ],
+    showProcess: true,
+  },
+  {
+    id: "talleres",
+    title: "Talleres y Cursos",
+    description:
+      "Programas diseñados para grupos que buscan desarrollar habilidades específicas y profundizar en temas relacionados con el desarrollo personal y profesional.",
+    features: [
+      "Talleres vivenciales",
+      "Cursos de formación",
+      "Programas corporativos",
+    ],
+    leftContent: `
+      <h3 class="text-2xl font-medium text-[#4A4558] mb-4">Modalidades</h3>
+      <ul class="space-y-3">
+        <li class="flex items-start">
+          <span class="text-[#4A4558]/80">• Talleres presenciales</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#4A4558]/80">• Cursos online</span>
+        </li>
+        <li class="flex items-start">
+          <span class="text-[#4A4558]/80">• Programas híbridos</span>
+        </li>
+      </ul>
+    `,
+    rightContent: `
+      <h3 class="text-2xl font-medium text-[#4A4558] mb-4">Enfoque</h3>
+      <p class="text-[#4A4558]/80">
+        Nuestros programas combinan teoría y práctica en un ambiente 
+        de aprendizaje colaborativo. Cada taller está diseñado para 
+        maximizar la experiencia de aprendizaje a través de ejercicios 
+        prácticos, discusiones grupales y retroalimentación personalizada.
+      </p>
+    `,
+  },
+];
 ---
 
 <section id="services" class="snap-section bg-[#D6E6E1] relative">
@@ -9,231 +93,375 @@ import SectionStars from "../react/SectionStars";
     <h2 class="text-4xl font-belleza text-[#4A4558] text-left mb-12">
       Servicios
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {/* Constelaciones Familiares */}
-      <Card
-        class="bg-[#F8F8F5] border-[#4A4558]/10 hover:border-[#4A4558]/20 transition-colors"
-      >
-        <CardHeader>
-          <CardTitle class="text-[#4A4558] text-xl font-medium">
-            Constelaciones Familiares
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p class="text-[#4A4558]/80 mb-6">
-            Una metodología que te permite identificar y transformar patrones
-            familiares inconscientes que afectan tu vida actual, generando
-            nuevas posibilidades de bienestar.
-          </p>
-          <ul class="space-y-3 mb-6">
-            <li class="flex items-start">
-              <svg
-                class="w-5 h-5 text-[#4A4558] mt-0.5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-[#4A4558]/80">
-                Sesiones individuales y grupales
-              </span>
-            </li>
-            <li class="flex items-start">
-              <svg
-                class="w-5 h-5 text-[#4A4558] mt-0.5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-[#4A4558]/80">
-                Identificación de dinámicas familiares
-              </span>
-            </li>
-            <li class="flex items-start">
-              <svg
-                class="w-5 h-5 text-[#4A4558] mt-0.5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-[#4A4558]/80">
-                Resolución de conflictos intergeneracionales
-              </span>
-            </li>
-          </ul>
-          <Button
-            variant="outline"
-            class="w-full bg-[#4A4558] text-[#F8F8F5] hover:bg-[#4A4558]/90 border-[#4A4558]"
-          >
-            Más información
-          </Button>
-        </CardContent>
-      </Card>
 
-      <Card
-        class="bg-[#F8F8F5] border-[#4A4558]/10 hover:border-[#4A4558]/20 transition-colors"
+    <div id="services-container" class="flex flex-col items-center">
+      {/* Cards iniciales */}
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500 w-full max-w-6xl mx-auto"
+        id="services-cards"
       >
-        <CardHeader>
-          <CardTitle class="text-[#4A4558] text-xl font-medium">
-            Coaching Ontológico y Sistemico
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p class="text-[#4A4558]/80 mb-6">
-            Un proceso transformador que te ayuda a desarrollar nuevas formas de
-            observar, interpretar y actuar en tu vida, permitiéndote alcanzar
-            resultados extraordinarios.
-          </p>
-          <ul class="space-y-3 mb-6">
-            <li class="flex items-start">
-              <svg
-                class="w-5 h-5 text-[#4A4558] mt-0.5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-[#4A4558]/80">
-                Sesiones individuales personalizadas
-              </span>
-            </li>
-            <li class="flex items-start">
-              <svg
-                class="w-5 h-5 text-[#4A4558] mt-0.5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-[#4A4558]/80">
-                Desarrollo de competencias conversacionales
-              </span>
-            </li>
-            <li class="flex items-start">
-              <svg
-                class="w-5 h-5 text-[#4A4558] mt-0.5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-[#4A4558]/80">
-                Herramientas prácticas para el día a día
-              </span>
-            </li>
-          </ul>
-          <Button
-            variant="outline"
-            class="w-full bg-[#4A4558] text-[#F8F8F5] hover:bg-[#4A4558]/90 border-[#4A4558]"
-          >
-            Más información
-          </Button>
-        </CardContent>
-      </Card>
+        {
+          services.map((service) => (
+            <Card
+              class="bg-[#F8F8F5] border-[#4A4558]/10 hover:border-[#4A4558]/20 transition-all duration-300 compact-card"
+              data-service={service.id}
+            >
+              <CardHeader class="text-center">
+                <CardTitle class="text-[#4A4558] text-xl font-medium">
+                  {service.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p class="text-[#4A4558]/80 mb-6 service-description text-center">
+                  {service.description}
+                </p>
+                <ul class="space-y-3 mb-6 service-features">
+                  {service.features.map((feature) => (
+                    <li class="flex items-start">
+                      <svg
+                        class="w-5 h-5 text-[#4A4558] mt-0.5 mr-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span class="text-[#4A4558]/80">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  class="w-full bg-[#4A4558] text-[#F8F8F5] hover:bg-[#4A4558]/90 border-[#4A4558] rounded-md px-4 py-2 more-info-btn"
+                  data-service={service.id}
+                >
+                  Más información
+                </button>
+              </CardContent>
+            </Card>
+          ))
+        }
+      </div>
 
-      {/* Talleres y Cursos */}
-      <Card
-        class="bg-[#F8F8F5] border-[#4A4558]/10 hover:border-[#4A4558]/20 transition-colors"
+      {/* Sección detallada (inicialmente oculta) */}
+      <div
+        class="hidden mt-12 grid-cols-1 lg:grid-cols-2 gap-8"
+        id="detailed-section"
       >
-        <CardHeader>
-          <CardTitle class="text-[#4A4558] text-xl font-medium">
-            Talleres y Cursos
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p class="text-[#4A4558]/80 mb-6">
-            Programas diseñados para grupos que buscan desarrollar habilidades
-            específicas y profundizar en temas relacionados con el desarrollo
-            personal y profesional.
-          </p>
-          <ul class="space-y-3 mb-6">
-            <li class="flex items-start">
-              <svg
-                class="w-5 h-5 text-[#4A4558] mt-0.5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-[#4A4558]/80"> Talleres vivenciales </span>
-            </li>
-            <li class="flex items-start">
-              <svg
-                class="w-5 h-5 text-[#4A4558] mt-0.5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-[#4A4558]/80"> Cursos de formación </span>
-            </li>
-            <li class="flex items-start">
-              <svg
-                class="w-5 h-5 text-[#4A4558] mt-0.5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
-              <span class="text-[#4A4558]/80"> Programas corporativos </span>
-            </li>
-          </ul>
-          <Button
-            variant="outline"
-            class="w-full bg-[#4A4558] text-[#F8F8F5] hover:bg-[#4A4558]/90 border-[#4A4558]"
+        {/* Cuadrante izquierdo - Ahora el gráfico */}
+        <div class="bg-transparent p-6" id="left-quadrant">
+          {
+            services.map((service) => (
+              <div id={`right-${service.id}`} class="service-content hidden">
+                {service.showProcess ? (
+                  <ProcessSection />
+                ) : (
+                  <div set:html={service.leftContent} />
+                )}
+              </div>
+            ))
+          }
+        </div>
+
+        {/* Cuadrante derecho - Ahora el logo */}
+        <div
+          class="bg-transparent h-[60%] p-6 flex items-center justify-center"
+          id="right-quadrant"
+        >
+          {
+            services.map((service) => (
+              <div
+                id={`left-${service.id}`}
+                class="service-content hidden"
+                set:html={service.id === "coaching" ? "" : service.rightContent}
+              />
+            ))
+          }
+          <div
+            id="brand-logo"
+            class="hidden w-full flex justify-center items-center"
           >
-            Más información
-          </Button>
-        </CardContent>
-      </Card>
+            <div class="logo-container animate-float">
+              <div class="logo-circle circle-1"></div>
+              <div class="logo-circle circle-2"></div>
+              <div class="logo-circle circle-3"></div>
+              <span class="circle-label label-1">Cuerpo</span>
+              <span class="circle-label label-2">Mente</span>
+              <span class="circle-label label-3">Emoción</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <SectionStars client:load startX={25} startY={0} endX={75} endY={100} />
 </section>
+
+<style>
+  .service-content h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .service-content ul {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .service-content p {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Estilos para las cards compactadas */
+  .compact-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    min-height: auto;
+    max-height: 60px;
+  }
+
+  .compact-card .card-header {
+    margin: 0;
+    padding: 0;
+  }
+
+  .compact-card .more-info-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    margin: 0;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  .compact-card .more-info-btn:hover {
+    opacity: 1;
+  }
+
+  .compact-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #4a4558, transparent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .compact-card:hover::after {
+    transform: scaleX(1);
+  }
+
+  .compact-card:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 4px 6px -1px rgba(74, 69, 88, 0.1),
+      0 2px 4px -1px rgba(74, 69, 88, 0.06);
+  }
+
+  .compact-card.active {
+    background-color: #4a4558;
+    color: #f8f8f5;
+  }
+
+  .compact-card.active .card-title {
+    color: #f8f8f5;
+  }
+
+  .logo-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-circle {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 2px solid #4a4558;
+    border-radius: 50%;
+  }
+
+  .circle-1 {
+    transform: translateX(-70px);
+  }
+
+  .circle-2 {
+    transform: translateX(70px);
+  }
+
+  .circle-3 {
+    transform: translateY(90px);
+  }
+
+  .circle-label {
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4a4558;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .label-1 {
+    top: 40px;
+    left: 30px;
+    transform: translateY(100px) translateX(10px);
+  }
+
+  .label-2 {
+    top: 40px;
+    right: 30px;
+    transform: translateY(100px) translateX(-20px);
+  }
+
+  .label-3 {
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @keyframes rotate-1 {
+    from {
+      transform: translateX(-40px) rotate(0deg);
+    }
+    to {
+      transform: translateX(-40px) rotate(360deg);
+    }
+  }
+
+  .logo-container:hover .logo-circle {
+    animation-play-state: paused;
+  }
+</style>
+
+<script>
+  function initializeServices() {
+    const cardsContainer = document.getElementById("services-cards");
+    const detailedSection = document.getElementById("detailed-section");
+    const moreInfoButtons = document.querySelectorAll(".more-info-btn");
+    const descriptions = document.querySelectorAll(".service-description");
+    const features = document.querySelectorAll(".service-features");
+    const brandLogo = document.getElementById("brand-logo");
+
+    if (!cardsContainer || !detailedSection || !brandLogo) return;
+
+    let isExpanded = false;
+    let currentService = "";
+
+    function showDetailedInfo(serviceId) {
+      // Ocultar todos los contenidos
+      document.querySelectorAll(".service-content").forEach((content) => {
+        content.classList.add("hidden");
+      });
+
+      // Actualizar estado de las cards
+      document.querySelectorAll(".compact-card").forEach((card) => {
+        card.classList.remove("active");
+        if (card.getAttribute("data-service") === serviceId) {
+          card.classList.add("active");
+        }
+      });
+
+      // Mostrar los contenidos correspondientes al servicio
+      const leftContent = document.getElementById(`right-${serviceId}`);
+      const rightContent = document.getElementById(`left-${serviceId}`);
+
+      if (serviceId === "coaching") {
+        // Para coaching, mostrar el logo en el cuadrante derecho
+        if (brandLogo) {
+          brandLogo.classList.remove("hidden");
+        }
+        // Mostrar el proceso en el cuadrante izquierdo
+        if (leftContent) {
+          leftContent.classList.remove("hidden");
+        }
+      } else {
+        // Para otros servicios, ocultar el logo
+        if (brandLogo) {
+          brandLogo.classList.add("hidden");
+        }
+        // Mostrar el contenido específico del servicio
+        if (leftContent) {
+          leftContent.classList.remove("hidden");
+        }
+        if (rightContent) {
+          rightContent.classList.remove("hidden");
+        }
+      }
+
+      currentService = serviceId;
+    }
+
+    function expandCards() {
+      if (!isExpanded) {
+        // Compactar cards
+        descriptions.forEach((desc) => desc.classList.add("hidden"));
+        features.forEach((feat) => feat.classList.add("hidden"));
+
+        // Aplicar estilos compactados
+        const cards = document.querySelectorAll(".card");
+        cards.forEach((card) => {
+          card.classList.add("compact-card");
+        });
+
+        // Mostrar sección detallada
+        detailedSection.classList.remove("hidden");
+        detailedSection.classList.add("grid");
+
+        isExpanded = true;
+      }
+    }
+
+    // Manejar clic en "Más información" y en las cards compactadas
+    function handleCardClick(serviceId) {
+      if (!isExpanded) {
+        expandCards();
+      }
+      showDetailedInfo(serviceId);
+    }
+
+    moreInfoButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const serviceId = button.getAttribute("data-service");
+        if (serviceId) {
+          handleCardClick(serviceId);
+        }
+      });
+    });
+
+    // Agregar evento de clic a las cards compactadas
+    document.querySelectorAll(".card").forEach((card) => {
+      card.addEventListener("click", () => {
+        if (isExpanded) {
+          const serviceId = card.getAttribute("data-service");
+          if (serviceId) {
+            handleCardClick(serviceId);
+          }
+        }
+      });
+    });
+  }
+
+  // Ejecutar cuando el DOM esté listo
+  document.addEventListener("DOMContentLoaded", initializeServices);
+
+  // También ejecutar cuando Astro haya hidratado el componente
+  if (document.readyState === "complete") {
+    initializeServices();
+  }
+</script>
