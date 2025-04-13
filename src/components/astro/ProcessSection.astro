@@ -1,226 +1,91 @@
 ---
-import { Button } from "../react/ui/button";
-import SectionStars from "../react/SectionStars";
-import { useState } from "react";
-
-const processSteps = {
-  constelaciones: [
-    {
-      number: "01",
-      title: "Primer contacto",
-      description:
-        "Conversación inicial para conocer tu historia familiar y objetivos.",
-    },
-    {
-      number: "02",
-      title: "Sesión diagnóstico",
-      description:
-        "Exploramos tu sistema familiar para identificar patrones y dinámicas.",
-    },
-    {
-      number: "03",
-      title: "Constelación individual",
-      description:
-        "Trabajamos con representantes para visualizar y transformar patrones familiares.",
-    },
-    {
-      number: "04",
-      title: "Integración y seguimiento",
-      description:
-        "Sesiones de seguimiento para consolidar los cambios y nuevas perspectivas.",
-    },
-  ],
-  coaching: [
-    {
-      number: "01",
-      title: "Primer contacto",
-      description:
-        "Conversación inicial para identificar tus objetivos y áreas de desarrollo.",
-    },
-    {
-      number: "02",
-      title: "Sesión diagnóstico",
-      description:
-        "Evaluamos tu situación actual y definimos el camino de transformación.",
-    },
-    {
-      number: "03",
-      title: "Sesiones de coaching",
-      description:
-        "Trabajamos en desarrollar nuevas competencias y formas de observar.",
-    },
-    {
-      number: "04",
-      title: "Cierre y evaluación",
-      description:
-        "Evaluamos resultados y consolidamos aprendizajes para el futuro.",
-    },
-  ],
-  talleres: [
-    {
-      number: "01",
-      title: "Primer contacto",
-      description:
-        "Conversación para conocer tus intereses y objetivos de aprendizaje.",
-    },
-    {
-      number: "02",
-      title: "Inscripción y preparación",
-      description: "Proceso de inscripción y materiales previos al taller.",
-    },
-    {
-      number: "03",
-      title: "Taller vivencial",
-      description: "Experiencia práctica y transformadora en grupo.",
-    },
-    {
-      number: "04",
-      title: "Seguimiento y comunidad",
-      description:
-        "Acceso a comunidad y recursos para continuar el aprendizaje.",
-    },
-  ],
-};
+const processSteps = [
+  {
+    number: "01",
+    title: "Primer contacto",
+    description:
+      "Conversación inicial para identificar tus objetivos y áreas de desarrollo.",
+  },
+  {
+    number: "02",
+    title: "Sesión diagnóstico",
+    description:
+      "Evaluamos tu situación actual y definimos el camino de transformación.",
+  },
+  {
+    number: "03",
+    title: "Sesiones de coaching",
+    description:
+      "Trabajamos en desarrollar nuevas competencias y formas de observar.",
+  },
+  {
+    number: "04",
+    title: "Cierre y evaluación",
+    description:
+      "Evaluamos resultados y consolidamos aprendizajes para el futuro.",
+  },
+];
 ---
 
-<section id="process" class="snap-section bg-[#BBAEBE] relative">
-  <div class="section-container">
-    {/* Service Selection Buttons */}
-    <div class="flex flex-wrap justify-center gap-4 mb-12">
-      <Button
-        variant="outline"
-        class="bg-[#4A4558] text-[#F8F8F5] hover:bg-[#4A4558]/90 border-[#4A4558]"
-        data-service="constelaciones"
-      >
-        Constelaciones Familiares
-      </Button>
-      <Button
-        variant="outline"
-        class="bg-[#4A4558] text-[#F8F8F5] hover:bg-[#4A4558]/90 border-[#4A4558]"
-        data-service="coaching"
-      >
-        Coaching Ontológico
-      </Button>
-      <Button
-        variant="outline"
-        class="bg-[#4A4558] text-[#F8F8F5] hover:bg-[#4A4558]/90 border-[#4A4558]"
-        data-service="talleres"
-      >
-        Talleres y Cursos
-      </Button>
+<div class="process-container scale-75 origin-top">
+  <div class="relative px-4">
+    {/* Línea conectora */}
+    <div
+      class="absolute left-[21px] md:left-1/2 top-0 bottom-0 w-0.5 bg-[#4A4558]/30 hidden sm:block"
+    >
     </div>
 
-    <div class="relative">
-      {/* Connecting line */}
-      <div
-        class="absolute left-[21px] md:left-1/2 top-0 bottom-0 w-0.5 bg-[#4A4558]/30 hidden sm:block"
-      >
-      </div>
+    {/* Pasos */}
+    <div class="space-y-4 sm:space-y-8 relative">
+      {
+        processSteps.map((step, index) => (
+          <div class={`flex flex-col sm:flex-row items-start gap-2`}>
+            <div
+              class={`flex-none ${index % 2 === 0 ? "md:text-right md:order-first" : "md:text-left md:order-last"} w-full md:w-1/2 p-2`}
+            >
+              {/* Número del paso (versión desktop) */}
+              <div class="hidden sm:block">
+                <div
+                  class={`h-7 w-7 rounded-full bg-[#4A4558] flex items-center justify-center text-[#F8F8F5] text-sm font-medium absolute ${index % 2 === 0 ? "md:right-[calc(50%-14px)]" : "md:left-[calc(50%-14px)]"} transform -translate-x-1/2 sm:translate-x-0`}
+                >
+                  {step.number}
+                </div>
+              </div>
 
-      {/* Steps */}
-      <div class="space-y-12 sm:space-y-16 relative">
-        {
-          processSteps.constelaciones.map((step, index) => (
-            <div class={`flex flex-col sm:flex-row items-start gap-4`}>
               <div
-                class={`flex-none ${index % 2 === 0 ? "md:text-right md:order-first" : "md:text-left md:order-last"} w-full md:w-1/2 p-4`}
+                class={`sm:max-w-md ${index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"}`}
               >
-                <div class="hidden sm:block">
-                  <div
-                    class={`h-10 w-10 rounded-full bg-[#4A4558] flex items-center justify-center text-[#F8F8F5] text-sm font-medium
-                  absolute ${index % 2 === 0 ? "md:right-[calc(50%-20px)]" : "md:left-[calc(50%-20px)]"} transform -translate-x-1/2 sm:translate-x-0`}
-                  >
+                {/* Número y título (versión móvil) */}
+                <div class="flex items-center sm:hidden mb-1">
+                  <div class="h-6 w-6 rounded-full bg-[#4A4558] flex items-center justify-center text-[#F8F8F5] text-xs font-medium mr-2">
                     {step.number}
                   </div>
-                </div>
-                <div
-                  class={`sm:max-w-md ${index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"}`}
-                >
-                  <div class="flex items-center sm:hidden mb-2">
-                    <div class="h-8 w-8 rounded-full bg-[#4A4558] flex items-center justify-center text-[#F8F8F5] text-xs font-medium mr-3">
-                      {step.number}
-                    </div>
-                    <h3 class="font-serif text-xl text-[#4A4558]">
-                      {step.title}
-                    </h3>
-                  </div>
-                  <h3 class="font-serif text-xl text-[#4A4558] hidden sm:block mb-2">
+                  <h3 class="font-belleza text-base text-[#4A4558]">
                     {step.title}
                   </h3>
-                  <p class="text-sm text-[#4A4558]/70">{step.description}</p>
                 </div>
+
+                {/* Título (versión desktop) */}
+                <h3 class="font-belleza text-base text-[#4A4558] hidden sm:block mb-1">
+                  {step.title}
+                </h3>
+
+                {/* Descripción */}
+                <p class="text-xs text-[#4A4558]/70">{step.description}</p>
               </div>
-              {index % 2 !== 0 && <div class="hidden md:block md:w-1/2" />}
             </div>
-          ))
-        }
-      </div>
+            {index % 2 !== 0 && <div class="hidden md:block md:w-1/2" />}
+          </div>
+        ))
+      }
     </div>
   </div>
-  <SectionStars client:load startX={75} startY={0} endX={25} endY={100} />
-</section>
-
-<script>
-  // Add event listeners to buttons
-  document.querySelectorAll("button[data-service]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const service = button.dataset.service;
-      // Update steps based on selected service
-      const stepsContainer = document.querySelector(".space-y-12");
-      stepsContainer.innerHTML = processSteps[service]
-        .map(
-          (step, index) => `
-        <div class="flex flex-col sm:flex-row items-start gap-4">
-          <div class="flex-none ${index % 2 === 0 ? "md:text-right md:order-first" : "md:text-left md:order-last"} w-full md:w-1/2 p-4">
-            <div class="hidden sm:block">
-              <div class="h-10 w-10 rounded-full bg-[#4A4558] flex items-center justify-center text-[#F8F8F5] text-sm font-medium
-                absolute ${index % 2 === 0 ? "md:right-[calc(50%-20px)]" : "md:left-[calc(50%-20px)]"} transform -translate-x-1/2 sm:translate-x-0">
-                ${step.number}
-              </div>
-            </div>
-            <div class="sm:max-w-md ${index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"}">
-              <div class="flex items-center sm:hidden mb-2">
-                <div class="h-8 w-8 rounded-full bg-[#4A4558] flex items-center justify-center text-[#F8F8F5] text-xs font-medium mr-3">
-                  ${step.number}
-                </div>
-                <h3 class="font-serif text-xl text-[#4A4558]">
-                  ${step.title}
-                </h3>
-              </div>
-              <h3 class="font-serif text-xl text-[#4A4558] hidden sm:block mb-2">
-                ${step.title}
-              </h3>
-              <p class="text-sm text-[#4A4558]/70">${step.description}</p>
-            </div>
-          </div>
-          ${index % 2 !== 0 ? '<div class="hidden md:block md:w-1/2"></div>' : ""}
-        </div>
-      `
-        )
-        .join("");
-    });
-  });
-</script>
+</div>
 
 <style>
-  .process-step {
-    @apply relative;
-  }
-
-  .process-step:not(:last-child)::after {
-    content: "";
-    @apply absolute top-8 right-0 w-full h-0.5 bg-sand/30 hidden md:block;
-  }
-
-  .step-number {
-    @apply w-12 h-12 rounded-full bg-sand text-ivory flex items-center justify-center text-xl font-serif mb-4;
-  }
-
-  .step-title {
-    @apply text-xl font-serif text-slate mb-2;
-  }
-
-  .step-description {
-    @apply text-slate/70;
+  .process-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
   }
 </style>
