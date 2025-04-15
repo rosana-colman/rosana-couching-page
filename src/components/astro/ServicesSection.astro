@@ -6,83 +6,56 @@ import ProcessSection from "./ProcessSection.astro";
 const services = [
   {
     id: "constelaciones",
-    title: "Constelaciones Familiares",
+    title: "Nuevas Constelaciones Familiares",
     description:
-      "Una metodología que te permite identificar y transformar patrones familiares inconscientes que afectan tu vida actual, generando nuevas posibilidades de bienestar.",
-    features: [
-      "Sesiones individuales y grupales",
-      "Identificación de dinámicas familiares",
-      "Resolución de conflictos intergeneracionales",
-    ],
+      "Las Constelaciones Familiares son un fenómeno de realidad espiritual que se manifiestan en una realidad material. <br/>Este fenómeno nos permite ver para sanar. <br/>Identificar una problemática que esta afectando nuestra vida, y darle lugar a aquello que no fue visto antes. <br/><br/><br/><br/>",
+    features: ["Sesiones individuales", "Talleres grupales"],
     leftContent: `
-      <h3 class="text-2xl font-medium text-[#4A4558] mb-4">Beneficios</h3>
-      <ul class="space-y-3">
-        <li class="flex items-start">
-          <span class="text-[#4A4558]/80">• Resolución de conflictos familiares</span>
-        </li>
-        <li class="flex items-start">
-          <span class="text-[#4A4558]/80">• Sanación de relaciones</span>
-        </li>
-        <li class="flex items-start">
-          <span class="text-[#4A4558]/80">• Liberación de patrones limitantes</span>
-        </li>
-      </ul>
+      <h3 class="text-2xl font-medium text-[#4A4558] mb-4">¿Qué son las Constelaciones Familiares?</h3>
+      <p>
+        Todo aquello que afecta nuestra vida, cualquier problema que se nos presente, una situación de pareja, un conflicto laboral, una enfermedad, temas de dinero… Todo eso y mas, se puede constelar. 
+      <p/>
+      <br/>
+      <p>
+        Las constelaciones nos muestran un conflicto no resuelto, un pendiente, alguien que fue excluido de nuestro sistema…y por resonancia se manifiesta en nosotros, una situación que nos excede, algo que solos no podemos resolver y que muchas veces su origen proviene de nuestro sistema familiar, de nuestros ancestros.  
+      <p/>
+      <br/>
+      <p>
+        Repetimos patrones de conducta, sostenemos inconscientemente lealtades familiares. 
+      <p/>
+      <br/>
+      <p>
+        Las constelaciones familiares nos permiten "ver para sanar". Sacar a la luz aquello que no fue visto antes, nos permite no solo sanar nosotros mismos sino también sanar nuestro sistema. 
+      <p/>
     `,
     rightContent: `
-      <h3 class="text-2xl font-medium text-[#4A4558] mb-4">Metodología</h3>
-      <p class="text-[#4A4558]/80">
-        A través de la representación espacial y la observación sistémica, 
-        trabajamos en la identificación y transformación de dinámicas familiares 
-        que afectan tu presente. El proceso permite visualizar y resolver 
-        conflictos ocultos, liberando el potencial para crear nuevas posibilidades 
-        de bienestar.
+      <h3 class="text-2xl font-medium text-[#4A4558] mb-4">Rosana Colman</h3>
+      <p>
+        Coach Ontológico y Sistemico y Consteladora Familiar.
+      </p>
+      <p>
+        Fundadora de la Escuela de Constelaciones Familiares de Chile.
       </p>
     `,
   },
   {
     id: "coaching",
-    title: "Coach Ontológico y Sistemico",
+    title: "Coaching Ontológico y Sistemico",
     description:
-      "Un proceso transformador que te ayuda a desarrollar nuevas formas de observar, interpretar y actuar en tu vida, permitiéndote alcanzar resultados extraordinarios.",
-    features: [
-      "Sesiones individuales personalizadas",
-      "Desarrollo de competencias conversacionales",
-      "Herramientas prácticas para el día a día",
-    ],
+      "El coaching ontológico y sistémico es una herramienta poderosa al momento de tomar las riendas de nuestra vida. <br/>Cuando queremos obtener un resultado, y pese a hacer nuestro máximo esfuerzo no podemos lograrlo, puede  que haya alguna situación que va más allá de nuestro deseo y voluntad de poder cambiar ese resultado. <br/>Un proceso transformador que te ayuda a desarrollar nuevas formas de observar, interpretar y actuar en tu vida, permitiéndote alcanzar resultados extraordinarios.",
+    features: ["Sesiones individuales"],
     showProcess: true,
   },
   {
     id: "talleres",
-    title: "Talleres y Cursos",
+    title: "Talleres y Cursos (Proximamente...)",
     description:
-      "Programas diseñados para grupos que buscan desarrollar habilidades específicas y profundizar en temas relacionados con el desarrollo personal y profesional.",
-    features: [
-      "Talleres vivenciales",
-      "Cursos de formación",
-      "Programas corporativos",
-    ],
+      "Programas diseñados para grupos que buscan desarrollar habilidades específicas y profundizar en temas relacionados con el desarrollo personal y profesional.<br/><br/>",
+    features: ["Proximamente...."],
     leftContent: `
-      <h3 class="text-2xl font-medium text-[#4A4558] mb-4">Modalidades</h3>
-      <ul class="space-y-3">
-        <li class="flex items-start">
-          <span class="text-[#4A4558]/80">• Talleres presenciales</span>
-        </li>
-        <li class="flex items-start">
-          <span class="text-[#4A4558]/80">• Cursos online</span>
-        </li>
-        <li class="flex items-start">
-          <span class="text-[#4A4558]/80">• Programas híbridos</span>
-        </li>
-      </ul>
+      <h3 class="text-2xl font-medium text-[#4A4558] mb-4">Proximamente....</h3>
     `,
     rightContent: `
-      <h3 class="text-2xl font-medium text-[#4A4558] mb-4">Enfoque</h3>
-      <p class="text-[#4A4558]/80">
-        Nuestros programas combinan teoría y práctica en un ambiente 
-        de aprendizaje colaborativo. Cada taller está diseñado para 
-        maximizar la experiencia de aprendizaje a través de ejercicios 
-        prácticos, discusiones grupales y retroalimentación personalizada.
-      </p>
     `,
   },
 ];
@@ -115,9 +88,10 @@ const services = [
                   </CardTitle>
                 </CardHeader>
                 <CardContent class="px-6">
-                  <p class="text-[#4A4558]/80 mb-6 service-description text-center">
-                    {service.description}
-                  </p>
+                  <p
+                    class="text-[#4A4558]/80 mb-6 service-description text-center"
+                    set:html={service.description}
+                  />
                   <ul class="space-y-3 mb-6 service-features">
                     {service.features.map((feature) => (
                       <li class="flex items-start">
@@ -138,12 +112,14 @@ const services = [
                       </li>
                     ))}
                   </ul>
-                  <button
-                    class="w-full bg-[#4A4558] text-[#F8F8F5] hover:bg-[#4A4558]/90 border-[#4A4558] rounded-md px-4 py-2 more-info-btn"
-                    data-service={service.id}
-                  >
-                    Más información
-                  </button>
+                  <div class="flex items-end justify-center w-full h-full">
+                    <button
+                      class="w-full bg-[#4A4558] text-[#F8F8F5] hover:bg-[#4A4558]/90 border-[#4A4558] rounded-md px-4 py-2 more-info-btn"
+                      data-service={service.id}
+                    >
+                      Más información
+                    </button>
+                  </div>
                 </CardContent>
               </Card>
             ))
@@ -235,9 +211,10 @@ const services = [
                 {/* Contenido del acordeón (inicialmente oculto) */}
                 <div class="accordion-content px-4 pb-4 hidden">
                   {/* Descripción básica */}
-                  <p class="text-[#4A4558]/80 text-sm mb-3">
-                    {service.description}
-                  </p>
+                  <p
+                    class="text-[#4A4558]/80 text-sm mb-3"
+                    set:html={service.description}
+                  />
 
                   {/* Características */}
                   <div class="mb-4">

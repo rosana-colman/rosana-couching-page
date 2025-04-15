@@ -33,7 +33,7 @@ const testimonials = [
 <section id="contact" class="snap-section bg-[#6E8B97] relative">
   <div class="container mx-auto px-4 py-10 sm:py-16 md:py-20 relative z-10">
     <h2
-      class="text-2xl sm:text-3xl md:text-4xl font-belleza text-[#F8F8F5] text-left mb-6 sm:mb-8 md:mb-12"
+      class="text-2xl sm:text-3xl md:text-4xl font-belleza text-[#000] text-left mb-6 sm:mb-8 md:mb-12"
     >
       Testimonios y Contacto
     </h2>
@@ -44,21 +44,21 @@ const testimonials = [
       <div class="space-y-2">
         {
           testimonials.map((testimonial) => (
-            <Card class="bg-[#F8F8F5]/10 border-[#F8F8F5]/10">
+            <Card class="bg-[#000]/10 border-[#000]/10">
               <CardContent class="p-2">
                 <div class="flex items-start gap-2">
-                  <div class="w-6 h-6 rounded-full bg-[#4A4558] flex-shrink-0 flex items-center justify-center text-[#F8F8F5] text-[10px] font-medium">
+                  <div class="w-6 h-6 rounded-full bg-[#4A4558] flex-shrink-0 flex items-center justify-center text-[#000] text-[10px] font-medium">
                     {testimonial.initial}
                   </div>
                   <div>
-                    <p class="text-[#F8F8F5]/90 italic text-[10px] leading-tight mb-1">
+                    <p class="text-[#000]/90 italic text-[10px] leading-tight mb-1">
                       "{testimonial.quote}"
                     </p>
                     <div class="flex items-center text-[9px]">
-                      <span class="font-medium text-[#F8F8F5]">
+                      <span class="font-medium text-[#000]">
                         {testimonial.author}
                       </span>
-                      <span class="text-[#F8F8F5]/70 ml-1">
+                      <span class="text-[#000]/70 ml-1">
                         • {testimonial.role}
                       </span>
                     </div>
@@ -71,9 +71,9 @@ const testimonials = [
       </div>
 
       <!-- Contacto después en móvil -->
-      <div class="bg-[#F8F8F5]/10 rounded-lg p-4 border border-[#F8F8F5]/20">
+      <div class="bg-[#000]/10 rounded-lg p-4 border border-[#000]/20">
         <div class="text-center">
-          <p class="text-sm text-[#F8F8F5]/90 mb-4">
+          <p class="text-sm text-[#000]/90 mb-4">
             ¿Listo para iniciar tu proceso de transformación? Estoy aquí para
             acompañarte en tu camino hacia el bienestar.
           </p>
@@ -83,7 +83,7 @@ const testimonials = [
               href="https://wa.me/1155053393"
               target="_blank"
               rel="noopener noreferrer"
-              class="group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium bg-[#F8F8F5] hover:bg-[#F8F8F5]/90 text-[#6E8B97] px-5 py-3 w-full transition-all duration-300 shadow-lg hover:shadow-xl"
+              class="group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium bg-[#000] hover:bg-[#000]/90 text-[#6E8B97] px-5 py-3 w-full transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -93,7 +93,7 @@ const testimonials = [
               <span class="text-sm font-bold">Contactar por WhatsApp</span>
             </a>
 
-            <p class="text-[10px] text-[#F8F8F5]/60 mt-2">
+            <p class="text-[10px] text-[#000]/60 mt-2">
               Horario de atención: Lunes a Viernes, 9:00 - 18:00
             </p>
           </div>
@@ -110,23 +110,23 @@ const testimonials = [
         <div class="space-y-4 md:space-y-6">
           {
             testimonials.map((testimonial) => (
-              <Card class="bg-[#F8F8F5] border-[#F8F8F5]/20">
+              <Card class="bg-[#000] border-[#000]/20">
                 <CardContent class="p-4 md:p-6">
-                  <div class="mb-3 md:mb-4 text-[#F8F8F5] text-3xl md:text-4xl font-serif">
+                  <div class="mb-3 md:mb-4 text-[#000] text-3xl md:text-4xl font-serif">
                     "
                   </div>
-                  <p class="text-[#F8F8F5]/90 italic mb-4 md:mb-6 text-sm md:text-base">
+                  <p class="text-[#000]/90 italic mb-4 md:mb-6 text-sm md:text-base">
                     {testimonial.quote}
                   </p>
                   <div class="flex items-center">
-                    <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#4A4558] flex items-center justify-center text-[#F8F8F5] text-sm font-medium">
+                    <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#fff] flex items-center justify-center text-[#000] text-sm font-medium">
                       {testimonial.initial}
                     </div>
                     <div class="ml-3">
-                      <div class="font-medium text-[#F8F8F5] text-sm md:text-base">
+                      <div class="font-medium text-[#000] text-sm md:text-base">
                         {testimonial.author}
                       </div>
-                      <div class="text-xs text-[#F8F8F5]/70">
+                      <div class="text-xs text-[#000]/70">
                         {testimonial.role}
                       </div>
                     </div>
@@ -140,10 +140,10 @@ const testimonials = [
 
       {/* Contact Section */}
       <div
-        class="flex flex-col justify-center lg:pl-8 lg:border-l border-[#F8F8F5]/20"
+        class="flex flex-col justify-center lg:pl-8 lg:border-l border-[#000]/20"
       >
         <div class="max-w-lg mx-auto text-center">
-          <p class="text-base md:text-lg text-[#F8F8F5]/90 mb-6 md:mb-8">
+          <p class="text-base md:text-lg text-[#000]/90 mb-6 md:mb-8">
             ¿Listo para iniciar tu proceso de transformación? Estoy aquí para
             acompañarte en tu camino hacia el bienestar y el crecimiento
             personal.
@@ -154,7 +154,7 @@ const testimonials = [
               href="https://wa.me/1155053393"
               target="_blank"
               rel="noopener noreferrer"
-              class="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-md font-medium bg-[#F8F8F5] hover:bg-[#F8F8F5]/90 text-[#6E8B97] px-6 md:px-8 py-3 md:py-4 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              class="group inline-flex items-center justify-center gap-3 whitespace-nowrap rounded-md font-medium bg-[#000] hover:bg-[#000]/90 text-[#6E8B97] px-6 md:px-8 py-3 md:py-4 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               <svg
                 class="w-5 md:w-6 h-5 md:h-6"
@@ -170,7 +170,7 @@ const testimonials = [
               >
             </a>
 
-            <p class="text-xs text-[#F8F8F5]/60">
+            <p class="text-xs text-[#000]/60">
               Horario de atención: Lunes a Viernes, 9:00 - 18:00
             </p>
           </div>
