@@ -62,7 +62,7 @@ const services = [
 ---
 
 <section id="services" class="snap-section bg-[#D6E6E1] relative">
-  <div class="container mx-auto px-4 py-6 sm:py-10 md:py-20">
+  <div class="container mx-auto px-4 py-4 sm:py-4 2xl:py-20">
     <h2
       class="text-xl sm:text-2xl md:text-4xl font-belleza text-[#4A4558] text-left mb-4 sm:mb-6 md:mb-12"
     >
@@ -128,7 +128,7 @@ const services = [
 
         {/* Sección detallada (para desktop, inicialmente oculta) */}
         <div
-          class="hidden mt-12 grid-cols-1 lg:grid-cols-2 gap-8"
+          class="hidden mt-12 grid-cols-1 lg:grid-cols-2 gap-8 md:mt-4 2xl:mt-12"
           id="detailed-section"
         >
           {/* Cuadrante izquierdo - Ahora el gráfico */}
@@ -504,6 +504,38 @@ const services = [
     bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  @media (max-width: 1680px) {
+    .logo-container .circle-1 {
+      transform: translateX(-70px) translateY(-100px);
+    }
+
+    .logo-container .circle-2 {
+      transform: translateX(70px) translateY(-100px);
+    }
+
+    .logo-container .circle-3 {
+      transform: translateY(-10px);
+    }
+
+    .logo-container .label-1 {
+      top: 40px;
+      left: 30px;
+      transform: translateY(0) translateX(10px);
+    }
+
+    .logo-container .label-2 {
+      top: 40px;
+      right: 30px;
+      transform: translateY(0) translateX(-20px);
+    }
+
+    .logo-container .label-3 {
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+    }
   }
 
   @keyframes rotate-1 {
