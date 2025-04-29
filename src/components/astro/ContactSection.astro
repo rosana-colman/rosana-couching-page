@@ -31,7 +31,9 @@ const testimonials = [
 ---
 
 <section id="contact" class="snap-section bg-[#6E8B97] relative">
-  <div class="container mx-auto px-4 py-10 sm:py-16 md:py-20 relative z-10">
+  <div
+    class="container mx-auto px-4 py-10 sm:py-16 xl:py-4 2xl:py-20 relative z-10"
+  >
     <h2
       class="text-2xl sm:text-3xl md:text-4xl font-belleza text-[#000] text-left mb-6 sm:mb-8 md:mb-12"
     >
@@ -112,10 +114,7 @@ const testimonials = [
             testimonials.map((testimonial) => (
               <Card class="bg-[#000] border-[#000]/20">
                 <CardContent class="p-4 md:p-6">
-                  <div class="mb-3 md:mb-4 text-[#000] text-3xl md:text-4xl font-serif">
-                    "
-                  </div>
-                  <p class="text-[#000]/90 italic mb-4 md:mb-6 text-sm md:text-base">
+                  <p class="text-[#000]/90 italic mb-4 xl:mb-4 2xl:my-6 text-sm md:text-base">
                     {testimonial.quote}
                   </p>
                   <div class="flex items-center">
